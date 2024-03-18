@@ -1,0 +1,9 @@
+<div id="simple-search-main">
+    <div id="search-bar-div">
+        <input id="simple-search-input" [(ngModel)]="searchPhrase">
+        <button (click)="clickSearch()">Search</button>
+    </div>
+    <div *ngIf="HttpError" class="error">
+        Something went wrong fetching your search results
+    </div>
+</div>

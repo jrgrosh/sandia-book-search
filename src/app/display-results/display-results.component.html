@@ -1,0 +1,13 @@
+<div class="book-div" *ngFor="let book of books">
+    <span *ngIf="book && book.imageLinks && book.imageLinks.smallThumbnail">
+        <img [src]="book?.imageLinks?.smallThumbnail" />
+    </span>
+    <div>
+        <a [href]="book.previewLink" target="_blank" rel="noopener noreferrer">{{book.title}}</a> 
+        <br/>
+        {{book.authors | commaSeparated}} · {{book.publishedDate | date:'yyyy' }}
+        <br />
+        <br />
+        {{book.textSnippet | decodeHTML}}
+    </div>
+</div>
